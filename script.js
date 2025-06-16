@@ -18,26 +18,27 @@ function calculate(){
     
     let result='';
     console.log(typeof result)
-    
 
-    if(operator==='+'){
-        result= firstNumber+secondNumber;
-    }
-    else if(operator==='-'){
-         result= firstNumber-secondNumber;
-    
-    }
-    else if(operator==='*'){
-         result= firstNumber*secondNumber;
-        }
-    else if(operator==='/'){
-        if (secondNumber ===0 ){
+    switch (operator){
+        case '+':
+            result= firstNumber+secondNumber;
+            break
+        case '-':
+            result= firstNumber-secondNumber;
+            break    
+        case '*':
+            result= firstNumber*secondNumber;
+            break    
+        case '/':
+            if (secondNumber ===0 ){
             resultParagraph.textContent= 'devision by zero is not allowed'
-            return
+            return;}
+            result= firstNumber/secondNumber;
+            break    
+    }
+    
 
-        }
-         result= firstNumber/secondNumber;
-        }
+    
     
     resultParagraph.textContent= 'result is '+ result;
 
